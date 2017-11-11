@@ -11,7 +11,7 @@ public class Main {
         System.out.print("Surname: ");
         sc.addLastName();
 
-        System.out.print("Age:  ");
+        System.out.print("Age: ");
         sc.addAge();
 
     }
