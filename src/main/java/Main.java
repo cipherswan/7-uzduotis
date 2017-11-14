@@ -1,18 +1,25 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        Person sc = new Person();
+        Person person = new Person();
+        Scanner scanner = new Scanner(System.in);
+
 
         System.out.println("Enter your personal information here");
 
         System.out.print("Name: ");
-        sc.addFirstName();
+        String firstName = scanner.nextLine();
+        person.addFirstName(firstName);
 
         System.out.print("Surname: ");
-        sc.addLastName();
+        String lastName = scanner.nextLine();
+        person.addLastName(lastName);
 
         System.out.print("Age: ");
-        sc.addAge();
+        int age = scanner.nextInt();
+        person.addAge(age);
 
     }
 }
