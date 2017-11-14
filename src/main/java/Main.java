@@ -17,9 +17,16 @@ public class Main {
         String lastName = scanner.nextLine();
         person.addLastName(lastName);
 
+        System.out.print("Location: ");
+        String location = scanner.nextLine();
+        person.addLocation(location);
+
+        System.out.print("Email address: ");
+        String email = scanner.nextLine();
+        person.addEmail(email);
+
         System.out.print("Age: ");
         int age = scanner.nextInt();
         person.addAge(age);
-
     }
 }

@@ -32,5 +32,27 @@ public class PersonTest {
     public final void kaiRasomiMetaiYraNulisIsmetamasException() {
         person.addAge(0);
     }
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiMetaiYraMaziau21ViskasGerai() {
+        person.addAge(20);
+    }
+
+
+    //Location
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomasLocationYraNulisIsmetamasException() {
+        person.addLocation("");
+    }
+
+
+    //Email
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomasEmailAddressYraNulisIsmetamasException() {
+        person.addEmail("");
+    }
+
 }
 
