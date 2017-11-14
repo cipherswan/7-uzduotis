@@ -1,15 +1,16 @@
 class Person {
 
 
-    void addFirstName(String firstName){
-        System.out.println("ur name: " + firstName);
+    String addFirstName(String firstName) {
+        return firstName;
     }
 
-    void addLastName(String lastName) {
-        System.out.println("ur last name: " + lastName);
+    String addLastName(String lastName) {
+        return lastName;
     }
 
-    void addAge(int age){
-        System.out.println("ur age: " + age);
+    int addAge(int age) {
+        return age;
     }
 }
+

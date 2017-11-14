@@ -3,22 +3,34 @@ import org.junit.Test;
 
 public class PersonTest {
 
-    Person person = new Person();
+    private Person person = new Person();
 
-    @Test
-    public final void kaiRasomiMetaiRaidemisIsmetamasException() {
+    //First name
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomasVardasYraNullIsmetamasException() {
+        person.addFirstName("");
     }
 
-    @Test
-    public final void kaiRasomiMetaiMaziauNeguNulisIsmetamasException() {
-        RuntimeException exception = null;
-        try {
-            person.addAge();
-        } catch (RuntimeException e) {
-            exception = e;
-        }
-        Assert.assertNotNull("Exception was not thrown", exception);
-        Assert.assertEquals("Negatives not allowed: [-6, -18]", exception.getMessage());
+
+    //Last name
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomaPavardeYraNullIsmetamasException() {
+        person.addLastName("");
+    }
+
+
+    //Age
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiMetaiYraNeigiamiIsmetamasException() {
+        person.addAge(-5);
+    }
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiMetaiYraNulisIsmetamasException() {
+        person.addAge(0);
     }
 }
 
