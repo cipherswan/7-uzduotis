@@ -1,8 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.temporal.Temporal;
-
 public class PersonTest {
 
     private Person person = new Person();
@@ -47,11 +45,29 @@ public class PersonTest {
         person.addAge(0);
     }
 
-    @Test (expected = RuntimeException.class)
+    @Test
     public final void kaiRasomiMetaiYraMaziau21ViskasGerai() {
         person.addAge(20);
+        boolean ageValid = person.ageValid;
+        boolean expected = false;
+        Assert.assertEquals(expected, ageValid);
     }
 
+    @Test
+    public final void kaiRasomasAmziusYraDaugiau20ViskasGerai() {
+        person.addAge(21);
+        boolean ageValid = person.ageValid;
+        boolean expected = true;
+        Assert.assertEquals(expected, ageValid);
+    }
+
+    @Test
+    public final void kaiAmziusDaugiau120(){
+        person.addAge(155);
+        boolean ageValid = person.ageValid;
+        boolean expected = false;
+        Assert.assertEquals(expected, ageValid);
+    }
 
     //Location
 

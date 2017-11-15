@@ -1,5 +1,7 @@
 class Person {
 
+    boolean at = false;
+    boolean ageValid = false;
 
     String addFirstName(String firstName) {
         checkCharacterLength(firstName);
@@ -26,8 +28,16 @@ class Person {
     int addAge(int age) {
         if (age < 21)
         {
-            throw new RuntimeException("Too young");
-        }
+            ageValid = false;
+            System.out.println("Too young");
+
+        }else if (age >120)
+        {
+            ageValid = false;
+            System.out.println("Too old");
+        }else
+            ageValid = true;
+
         return age;
     }
 
@@ -36,6 +46,14 @@ class Person {
     }
 
     String addEmail(String email) {
+
+        if (email.contains("@") && email.contains(".com"))
+        {
+            at = true;
+            System.out.println("Yra @");
+        }
+        else System.out.println("Nera @");
+
         return email;
     }
 }
