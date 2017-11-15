@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.temporal.Temporal;
+
 public class PersonTest {
 
     private Person person = new Person();
@@ -71,6 +73,23 @@ public class PersonTest {
     public final void kaiRasomasEmailAddressYraNulisIsmetamasException() {
         person.addEmail("");
     }
+
+    @Test
+    public final void kaiRasomasEmailYraTikrinamaArYraAtSimbolis() {
+        person.addEmail("s@s.com");
+        boolean at = person.at;
+        boolean expected = true;
+        Assert.assertEquals(expected, at);
+    }
+
+    @Test
+    public final void kaiRasomasEmailYraTikrinamaArYraDomenas() {
+        person.addEmail("s@s.com");
+        boolean at = person.at;
+        boolean expected = true;
+        Assert.assertEquals(expected, at);
+    }
+
 
     @Test
     public final void kaiRasomasEmailYraNurodomasEmailIlgis() {
