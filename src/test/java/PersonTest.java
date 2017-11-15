@@ -12,12 +12,24 @@ public class PersonTest {
         person.addFirstName("");
     }
 
+    @Test
+    public final void kaiRasomasVardasYraNurodomasVardoIlgis() {
+        String vardas = person.addFirstName("Jonas");
+        Assert.assertEquals(5, person.checkCharacterLength(vardas));
+    }
+
 
     //Last name
 
     @Test (expected = RuntimeException.class)
     public final void kaiRasomaPavardeYraNullIsmetamasException() {
         person.addLastName("");
+    }
+
+    @Test
+    public final void kaiRasomaPavardeYraNurodomasPavardesIlgis() {
+        String pavarde = person.addLastName("Jonaitis");
+        Assert.assertEquals(8, person.checkCharacterLength(pavarde));
     }
 
 
@@ -42,8 +54,14 @@ public class PersonTest {
     //Location
 
     @Test (expected = RuntimeException.class)
-    public final void kaiRasomasLocationYraNulisIsmetamasException() {
+    public final void kaiRasomaVietaYraNulisIsmetamasException() {
         person.addLocation("");
+    }
+
+    @Test
+    public final void kaiRasomaVietaYraNurodomasVietosIlgis() {
+        String location = person.addFirstName("Vilnius");
+        Assert.assertEquals(7, person.checkCharacterLength(location));
     }
 
 
@@ -52,6 +70,12 @@ public class PersonTest {
     @Test (expected = RuntimeException.class)
     public final void kaiRasomasEmailAddressYraNulisIsmetamasException() {
         person.addEmail("");
+    }
+
+    @Test
+    public final void kaiRasomasEmailYraNurodomasEmailIlgis() {
+        String email = person.addFirstName("jonas@gmail.com");
+        Assert.assertEquals(15, person.checkCharacterLength(email));
     }
 
 }
