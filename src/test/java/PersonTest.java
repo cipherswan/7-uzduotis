@@ -37,7 +37,7 @@ public class PersonTest {
 
     @Test (expected = RuntimeException.class)
     public final void kaiRasomiMetaiYraNeigiamiIsmetamasException() {
-        person.addAge(-5);
+        person.addAge(-10);
     }
 
     @Test (expected = RuntimeException.class)
