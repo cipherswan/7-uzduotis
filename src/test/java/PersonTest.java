@@ -18,6 +18,14 @@ public class PersonTest {
         Assert.assertEquals(5, person.checkCharacterLength(vardas));
     }
 
+    @Test
+    public final void kaiRasomasVardasYraTikrinamaArNePerIlgas() {
+        person.addFirstName("Jonas");
+        boolean expected = false;
+        boolean isTooLong = person.isTooLong;
+        Assert.assertEquals(expected, isTooLong);
+    }
+
 
     //Last name
 
@@ -30,6 +38,14 @@ public class PersonTest {
     public final void kaiRasomaPavardeYraNurodomasPavardesIlgis() {
         String pavarde = person.addLastName("Jonaitis");
         Assert.assertEquals(8, person.checkCharacterLength(pavarde));
+    }
+
+    @Test
+    public final void kaiRasomaPavardeYraTikrinamaArNePerIlga() {
+        person.addFirstName("Jonaitis");
+        boolean expected = false;
+        boolean isTooLong = person.isTooLong;
+        Assert.assertEquals(expected, isTooLong);
     }
 
 
@@ -82,12 +98,26 @@ public class PersonTest {
         Assert.assertEquals(7, person.checkCharacterLength(location));
     }
 
+    @Test
+    public final void kaiRasomaVietaTikrinamaArIsDidzRaides() {
+        person.addLocation("Vilnius");
+        boolean expected = true;
+        boolean locationValid = person.locationValid;
+        Assert.assertEquals(expected, locationValid);
+    }
+
 
     //Email
 
     @Test (expected = RuntimeException.class)
     public final void kaiRasomasEmailAddressYraNulisIsmetamasException() {
         person.addEmail("");
+    }
+
+    @Test
+    public final void kaiRasomasEmailYraNurodomasEmailIlgis() {
+        String email = person.addFirstName("jonas@gmail.com");
+        Assert.assertEquals(15, person.checkCharacterLength(email));
     }
 
     @Test
@@ -104,13 +134,6 @@ public class PersonTest {
         boolean at = person.at;
         boolean expected = true;
         Assert.assertEquals(expected, at);
-    }
-
-
-    @Test
-    public final void kaiRasomasEmailYraNurodomasEmailIlgis() {
-        String email = person.addFirstName("jonas@gmail.com");
-        Assert.assertEquals(15, person.checkCharacterLength(email));
     }
 
 }
