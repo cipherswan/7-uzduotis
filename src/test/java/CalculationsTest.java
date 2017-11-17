@@ -10,7 +10,7 @@ public class CalculationsTest {
     //add
 
     @Test (expected = RuntimeException.class)
-    public final void kaiRasomiSkaiciaiYraNullIsmetamasException(){
+    public final void kaiRasomiSkaiciaiSudetiYraNullIsmetamasException(){
         calc.add("");
     }
 
@@ -28,6 +28,29 @@ public class CalculationsTest {
     public final void kaiSudedamasSkaiciusVienasJisIrIsvedamas(){
         Assert.assertEquals(1, calc.add("1"));
     }
+
+    //subtract
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiSkaiciaiAtimtiYraNullIsmetamasException(){
+        calc.subtract("");
+    }
+
+    @Test
+    public final void kaiAtimamiSkaiciaiGaunamasAtskymas(){
+        Assert.assertEquals(5-3, calc.subtract("5,3"));
+    }
+
+    @Test
+    public final void kaiAtimamiSkaiciaiTikimasiAtskyrimasKableliais(){
+        Assert.assertEquals(7-7, calc.subtract("7,7"));
+    }
+
+    @Test
+    public final void kaiAtimamasSkaiciusVienasJisIrIsvedamas(){
+        Assert.assertEquals(1, calc.subtract("1"));
+    }
+
 
 
 

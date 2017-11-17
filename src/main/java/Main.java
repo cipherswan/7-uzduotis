@@ -56,6 +56,9 @@ public class Main {
                 break;
 
             case 2 :
+                System.out.println("Per kableli parasykite, kokius du skaicius norite atimti: ");
+                String diffInput = scanner.next();
+                calc.subtract(diffInput);
 
                 break;
 
