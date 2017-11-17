@@ -28,5 +28,7 @@ public class Main {
         System.out.print("Age: ");
         int age = scanner.nextInt();
         person.addAge(age);
+
+
     }
 }
