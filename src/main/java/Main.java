@@ -33,6 +33,13 @@ public class Main {
         String phNumber = scanner.nextLine();
         System.out.println(person.addPhoneNumber(phNumber));
 
+        String[] strArray = phNumber.split("");
+        int[] intArray = new int[strArray.length];
+        for(int i = 0; i < strArray.length; i++) {
+            intArray[i] = Integer.parseInt(strArray[i]);
+            System.out.println(intArray[i]);
+        }
+
      //   System.out.print("Age: ");
      //   int age = scanner.nextInt();
      //   person.addAge(age);
