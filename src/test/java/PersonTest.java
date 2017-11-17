@@ -151,14 +151,14 @@ public class PersonTest {
 
     @Test
     public final void kaiRasomasTelNumerisTikrinamaArTeisingasIlgis() {
-        person.addPhoneNumber("855554789");
+        person.addPhoneNumber("11225478");
         boolean numberLengthValid = person.phNumberLength;
         Assert.assertEquals(true, numberLengthValid);
     }
 
     @Test
     public final void kaiRasomasTelNumerisTikrinamaArIsLietuvos() {
-        person.addPhoneNumber("865554789");
+        person.addPhoneNumber("65554789");
         boolean numberValid = person.phNumberValid;
         Assert.assertEquals(true, numberValid);
     }

@@ -30,15 +30,9 @@ public class Main {
         */
 
         System.out.println("Phone number: ");
+        System.out.print("+370 ");
         String phNumber = scanner.nextLine();
-        System.out.println(person.addPhoneNumber(phNumber));
-
-        String[] strArray = phNumber.split("");
-        int[] intArray = new int[strArray.length];
-        for(int i = 0; i < strArray.length; i++) {
-            intArray[i] = Integer.parseInt(strArray[i]);
-            System.out.println(intArray[i]);
-        }
+        System.out.println("+370 " + person.addPhoneNumber(phNumber));
 
      //   System.out.print("Age: ");
      //   int age = scanner.nextInt();
