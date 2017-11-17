@@ -1,15 +1,17 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
     public static void main(String[] args) {
         Person person = new Person();
+        Calculations calc = new Calculations();
         Scanner scanner = new Scanner(System.in);
 
 
         System.out.println("Enter your personal information here");
 
-        System.out.print("Name: ");
+      /*  System.out.print("Name: ");
         String firstName = scanner.nextLine();
         person.addFirstName(firstName);
 
@@ -25,10 +27,19 @@ public class Main {
         String email = scanner.nextLine();
         person.addEmail(email);
 
-        System.out.print("Age: ");
-        int age = scanner.nextInt();
-        person.addAge(age);
+        */
 
+        System.out.println("Phone number: ");
+        String phNumber = scanner.nextLine();
+        System.out.println(person.addPhoneNumber(phNumber));
+
+     //   System.out.print("Age: ");
+     //   int age = scanner.nextInt();
+     //   person.addAge(age);
+
+       // System.out.println("Kiek skaiciu: ");
+      //  int kiekis = scanner.nextInt();
+     //   System.out.println("Atsakymas: " + calc.add(kiekis));
 
     }
 }

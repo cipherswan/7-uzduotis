@@ -136,5 +136,25 @@ public class PersonTest {
         Assert.assertEquals(expected, at);
     }
 
+    //Phone number
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomasTelefonoNumerisYraNulisIsmetamasException() {
+        person.addPhoneNumber("");
+    }
+
+    @Test
+    public final void kaiRasomasTelNumerisYraNurodomasJoIlgis() {
+        String number = person.addPhoneNumber("864789125");
+        Assert.assertEquals(9, person.checkCharacterLength(number));
+    }
+
+    @Test
+    public final void kaiRasomasTelNumerisTikrinamaArTeisingasIlgis() {
+        person.addPhoneNumber("845554789");
+        boolean numberValid = person.phNumberValid;
+        Assert.assertEquals(true, numberValid);
+    }
+
 }
 
