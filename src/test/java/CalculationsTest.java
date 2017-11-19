@@ -52,6 +52,31 @@ public class CalculationsTest {
     }
 
 
+    //multiply
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiSkaiciaiSudaugintiYraNullIsmetamasException(){
+        calc.multiply("");
+    }
+
+    @Test
+    public final void kaiDauginamiSkaiciaiGaunamasAtskymas(){
+        Assert.assertEquals(2*2*3, calc.multiply("2,2,3"));
+    }
+
+    @Test
+    public final void kaiSudauginamiSkaiciaiTikimasiAtskyrimasKableliais(){
+        Assert.assertEquals(7*7, calc.multiply("7,7"));
+    }
+
+    @Test
+    public final void kaiSudauginamasSkaiciusVienasJisIrIsvedamas(){
+        Assert.assertEquals(5, calc.multiply("5"));
+    }
+
+
+
+
 
 
 }

@@ -44,7 +44,7 @@ public class Main {
         System.out.println("----------");
         System.out.println("1.Sudetis");
         System.out.println("2.Atimtis");
-        System.out.println("3.");
+        System.out.println("3.Daugyba");
         System.out.println("4.");
         int expression = scanner.nextInt();
 
@@ -59,6 +59,12 @@ public class Main {
                 System.out.println("Per kableli parasykite, kokius du skaicius norite atimti: ");
                 String diffInput = scanner.next();
                 calc.subtract(diffInput);
+                break;
+
+            case 3 :
+                System.out.println("Per kableli parasykite, kokius skaicius norite sudauginti: ");
+                String multiplyInput = scanner.next();
+                calc.multiply(multiplyInput);
 
                 break;
 
