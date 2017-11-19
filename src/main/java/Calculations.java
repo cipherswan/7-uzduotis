@@ -1,6 +1,10 @@
-class Calculations {
+import javax.swing.text.MutableAttributeSet;
+import java.util.Scanner;
+import java.util.stream.IntStream;
 
-    int add(String input) {
+public class Calculations {
+
+    public int add(String input) {
         int sum = 0;
 
         if (input != null && !input.trim().isEmpty())
@@ -20,8 +24,8 @@ class Calculations {
         return sum;
     }
 
-    int subtract(String input) {
-        int diff;
+    public int subtract(String input) {
+        int diff = 0;
         int count = 0;
 
         if (input != null && !input.trim().isEmpty()) {
@@ -48,7 +52,7 @@ class Calculations {
         return diff;
     }
 
-    int multiply(String input) {
+    public int multiply(String input) {
         int answer = 1;
 
         if (input != null && !input.trim().isEmpty())
@@ -69,7 +73,7 @@ class Calculations {
         return answer;
     }
 
-    int divide(String input) {
+    public int divide(String input) {
         int answer;
         int count = 0;
 
@@ -83,6 +87,7 @@ class Calculations {
                 count = i;
             }
             if (count == 0){
+                answer = intArray[0];
                 throw new RuntimeException("Vienas skaicius, negalima dalinti");
             }else{
                 if (intArray[1] == 0)

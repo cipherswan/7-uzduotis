@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -9,7 +10,6 @@ public class Main {
 
 
         System.out.println("Enter your personal information here");
-
 
         System.out.print("Name: ");
         String firstName = scanner.nextLine();
@@ -27,23 +27,21 @@ public class Main {
         String email = scanner.nextLine();
         person.addEmail(email);
 
+
+
         System.out.println("Phone number: ");
         System.out.print("+370 ");
-        String phNumber = scanner.next();
+        String phNumber = scanner.nextLine();
         System.out.println("+370 " + person.addPhoneNumber(phNumber));
-
-        System.out.println("Password: ");
-        String password = scanner.next();
-        person.addPassword(password);
 
         System.out.print("Age: ");
         int age = scanner.nextInt();
         person.addAge(age);
 
 
+
         System.out.println("Skaiciavimai");
         System.out.println("----------");
-
         System.out.println("1.Sudetis");
         System.out.println("2.Atimtis");
         System.out.println("3.Daugyba");
@@ -75,9 +73,9 @@ public class Main {
                 calc.divide(divideInput);
                 break;
 
+
             default :
 
         }
-
     }
 }
