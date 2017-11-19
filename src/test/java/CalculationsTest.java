@@ -74,9 +74,38 @@ public class CalculationsTest {
         Assert.assertEquals(5, calc.multiply("5"));
     }
 
+    //division
 
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomiSkaiciaiDalintiYraNullIsmetamasException(){
+        calc.divide("");
+    }
 
+    @Test
+    public final void kaiDalinamiSkaiciaiGaunamasAtskymas(){
+        Assert.assertEquals(12/6, calc.divide("12,6"));
+    }
 
+    @Test
+    public final void kaiDalinysYraNulisGaunamasNulis(){
+        Assert.assertEquals(0/6, calc.divide("0,6"));
+    }
 
+    @Test
+    public final void kaiDalinamiSkaiciaiTikimasiAtskyrimasKableliais(){
+        Assert.assertEquals(7/7, calc.divide("7,7"));
+    }
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiDalinamasSkaiciusVienasIsmetamasException(){
+        calc.divide("2");
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public final void kaiDalinamaIsNulioIsmetamasException() {
+        calc.divide("4,0");
+    }
 
 }
+
+//18

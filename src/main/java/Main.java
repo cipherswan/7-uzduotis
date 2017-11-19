@@ -45,7 +45,7 @@ public class Main {
         System.out.println("1.Sudetis");
         System.out.println("2.Atimtis");
         System.out.println("3.Daugyba");
-        System.out.println("4.");
+        System.out.println("4.Dalyba");
         int expression = scanner.nextInt();
 
         switch(expression) {
@@ -65,7 +65,12 @@ public class Main {
                 System.out.println("Per kableli parasykite, kokius skaicius norite sudauginti: ");
                 String multiplyInput = scanner.next();
                 calc.multiply(multiplyInput);
+                break;
 
+            case 4 :
+                System.out.println("Per kableli parasykite, kokius du skaicius norite padalinti");
+                String divideInput = scanner.next();
+                calc.divide(divideInput);
                 break;
 
 
