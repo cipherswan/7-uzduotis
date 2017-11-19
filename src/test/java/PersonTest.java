@@ -13,6 +13,11 @@ public class PersonTest {
     }
 
     @Test
+    public final void kaiRasomasVardasTeisingaiViskasGerai() {
+        person.addFirstName("Petras");
+    }
+
+    @Test
     public final void kaiRasomasVardasYraNurodomasVardoIlgis() {
         String vardas = person.addFirstName("Jonas");
         Assert.assertEquals(5, person.checkCharacterLength(vardas));
@@ -32,6 +37,11 @@ public class PersonTest {
     @Test (expected = RuntimeException.class)
     public final void kaiRasomaPavardeYraNullIsmetamasException() {
         person.addLastName("");
+    }
+
+    @Test
+    public final void kaiRasomaPavardeTeisingaiViskasGerai() {
+        person.addLastName("Jonaitis");
     }
 
     @Test
@@ -85,6 +95,11 @@ public class PersonTest {
         Assert.assertEquals(expected, ageValid);
     }
 
+    @Test
+    public final void kaiRasomiMetaiViskasGerai() {
+        person.addAge(27);
+    }
+
     //Location
 
     @Test (expected = RuntimeException.class)
@@ -104,6 +119,11 @@ public class PersonTest {
         boolean expected = true;
         boolean locationValid = person.locationValid;
         Assert.assertEquals(expected, locationValid);
+    }
+
+    @Test
+    public final void kaiRasomaVietaTeisingaiViskasGerai() {
+        person.addFirstName("Vilnius");
     }
 
 
@@ -136,6 +156,11 @@ public class PersonTest {
         Assert.assertEquals(expected, at);
     }
 
+    @Test
+    public final void kaiRasomasEmailTeisingaiViskasGerai() {
+        person.addEmail("jonas@gmail.com");
+    }
+
     //Phone number
 
     @Test (expected = RuntimeException.class)
@@ -163,7 +188,37 @@ public class PersonTest {
         Assert.assertEquals(true, numberValid);
     }
 
+    @Test
+    public final void kaiRasomasTelNumerisTeisingaiViskasGerai() {
+        person.addFirstName("68456789");
+    }
+
+    //Password
+
+    @Test (expected = RuntimeException.class)
+    public final void kaiRasomasSlaptazodisYraNullIsmetamasException() {
+        person.addPassword("");
+    }
+
+    @Test
+    public final void kaiRasomasSlaptazodisTeisingaiViskasGerai() {
+        person.addPassword("slaptazodis");
+    }
+
+    @Test
+    public final void kaiRasomasSlaptazodisYraNurodomasJoIlgis() {
+        String psw = person.addPassword("aaaaaaa");
+        Assert.assertEquals(5, person.checkCharacterLength(psw));
+    }
+
+    @Test
+    public final void kaiRasomasSlaptazodisYraTikrinamaArNePerTrumpas() {
+        person.addPassword("aaaaaa");
+        boolean expected = false;
+        boolean isTooShort = person.passTooShort;
+        Assert.assertEquals(expected, isTooShort);
+    }
 }
 
-//22
+//32
 
