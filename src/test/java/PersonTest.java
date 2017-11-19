@@ -208,7 +208,7 @@ public class PersonTest {
     @Test
     public final void kaiRasomasSlaptazodisYraNurodomasJoIlgis() {
         String psw = person.addPassword("aaaaaaa");
-        Assert.assertEquals(5, person.checkCharacterLength(psw));
+        Assert.assertEquals(7, person.checkCharacterLength(psw));
     }
 
     @Test
