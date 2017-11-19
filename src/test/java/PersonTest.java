@@ -26,9 +26,8 @@ public class PersonTest {
     @Test
     public final void kaiRasomasVardasYraTikrinamaArNePerIlgas() {
         person.addFirstName("Jonas");
-        boolean expected = false;
         boolean isTooLong = person.isTooLong;
-        Assert.assertEquals(expected, isTooLong);
+        Assert.assertEquals(false, isTooLong);
     }
 
 
@@ -53,9 +52,8 @@ public class PersonTest {
     @Test
     public final void kaiRasomaPavardeYraTikrinamaArNePerIlga() {
         person.addFirstName("Jonaitis");
-        boolean expected = false;
         boolean isTooLong = person.isTooLong;
-        Assert.assertEquals(expected, isTooLong);
+        Assert.assertEquals(false, isTooLong);
     }
 
 
@@ -75,24 +73,21 @@ public class PersonTest {
     public final void kaiRasomiMetaiYraMaziau21ViskasGerai() {
         person.addAge(20);
         boolean ageValid = person.ageValid;
-        boolean expected = false;
-        Assert.assertEquals(expected, ageValid);
+        Assert.assertEquals(false, ageValid);
     }
 
     @Test
     public final void kaiRasomasAmziusYraDaugiau20ViskasGerai() {
         person.addAge(21);
         boolean ageValid = person.ageValid;
-        boolean expected = true;
-        Assert.assertEquals(expected, ageValid);
+        Assert.assertEquals(true, ageValid);
     }
 
     @Test
     public final void kaiAmziusDaugiau120(){
         person.addAge(155);
         boolean ageValid = person.ageValid;
-        boolean expected = false;
-        Assert.assertEquals(expected, ageValid);
+        Assert.assertEquals(false, ageValid);
     }
 
     @Test
@@ -116,9 +111,8 @@ public class PersonTest {
     @Test
     public final void kaiRasomaVietaTikrinamaArIsDidzRaides() {
         person.addLocation("Vilnius");
-        boolean expected = true;
         boolean locationValid = person.locationValid;
-        Assert.assertEquals(expected, locationValid);
+        Assert.assertEquals(true, locationValid);
     }
 
     @Test
@@ -144,16 +138,14 @@ public class PersonTest {
     public final void kaiRasomasEmailYraTikrinamaArYraAtSimbolis() {
         person.addEmail("s@s.com");
         boolean at = person.at;
-        boolean expected = true;
-        Assert.assertEquals(expected, at);
+        Assert.assertEquals(true, at);
     }
 
     @Test
     public final void kaiRasomasEmailYraTikrinamaArYraDomenas() {
         person.addEmail("s@s.com");
         boolean at = person.at;
-        boolean expected = true;
-        Assert.assertEquals(expected, at);
+        Assert.assertEquals(true, at);
     }
 
     @Test
@@ -214,9 +206,8 @@ public class PersonTest {
     @Test
     public final void kaiRasomasSlaptazodisYraTikrinamaArNePerTrumpas() {
         person.addPassword("aaaaaa");
-        boolean expected = false;
         boolean isTooShort = person.passTooShort;
-        Assert.assertEquals(expected, isTooShort);
+        Assert.assertEquals(false, isTooShort);
     }
 }
 

@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class CalculationsTest {
 
-    Calculations calc = new Calculations();
+    private Calculations calc = new Calculations();
 
     //add
 
@@ -41,7 +41,7 @@ public class CalculationsTest {
 
     @Test
     public final void kaiAtimamiSkaiciaiTikimasiAtskyrimasKableliais(){
-        Assert.assertEquals(7-7, calc.subtract("7,7"));
+        Assert.assertEquals(10-7, calc.subtract("10,7"));
     }
 
     @Test
@@ -91,7 +91,7 @@ public class CalculationsTest {
 
     @Test
     public final void kaiDalinamiSkaiciaiTikimasiAtskyrimasKableliais(){
-        Assert.assertEquals(7/7, calc.divide("7,7"));
+        Assert.assertEquals(10/5, calc.divide("10,5"));
     }
 
     @Test (expected = RuntimeException.class)

@@ -2,11 +2,9 @@ class Person {
 
     boolean at = false;
     boolean ageValid = false;
-    int max = 30;
-    int min = 6;
+    private int max = 30;
     boolean passTooShort = false;
     boolean isTooLong = false;
-    boolean hasUppercase = false;
     boolean locationValid = false;
     boolean phNumberValid = false;
     boolean phNumberLength = false;
@@ -56,7 +54,7 @@ class Person {
         return lastName;
     }
 
-    int addAge(int age) {
+    void addAge(int age) {
         if (age <= 0){
             throw new RuntimeException("Wrong age input");
         }
@@ -72,13 +70,12 @@ class Person {
         }else
             ageValid = true;
 
-        return age;
     }
 
-    String addLocation(String location) {
-        hasUppercase = !location.equals(location.toLowerCase());
+    void addLocation(String location) {
+        boolean hasUppercase = !location.equals(location.toLowerCase());
 
-        if (location != null && !location.trim().isEmpty()) {
+        if (!location.trim().isEmpty()) {
 
             if (hasUppercase) {
                 locationValid = true;
@@ -88,10 +85,9 @@ class Person {
         }else {
             throw new RuntimeException("No location entered");
         }
-        return location;
     }
 
-    String addEmail(String email) {
+    void addEmail(String email) {
         if (email != null && !email.trim().isEmpty()) {
 
             if (email.contains("@") && email.contains(".com")) {
@@ -102,14 +98,13 @@ class Person {
             throw new RuntimeException("No email address");
         }
 
-        return email;
     }
 
     String addPhoneNumber(String phNumber) {
         String[] strArray = phNumber.split("");
         int[] intArray = new int[strArray.length];
 
-        if (phNumber != null && !phNumber.trim().isEmpty()) {
+        if (!phNumber.trim().isEmpty()) {
 
             if (phNumber.length() == 8) {
                 phNumberLength = true;
@@ -136,6 +131,7 @@ class Person {
 
         if (password != null && !password.trim().isEmpty()) {
 
+            int min = 6;
             if (length < min) {
                 passTooShort = true;
                 System.out.println("Password length must be 6 characters or more.");

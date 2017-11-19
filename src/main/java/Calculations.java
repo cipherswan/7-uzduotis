@@ -1,6 +1,6 @@
-public class Calculations {
+class Calculations {
 
-    public int add(String input) {
+    int add(String input) {
         int sum = 0;
 
         if (input != null && !input.trim().isEmpty())
@@ -20,8 +20,8 @@ public class Calculations {
         return sum;
     }
 
-    public int subtract(String input) {
-        int diff = 0;
+    int subtract(String input) {
+        int diff;
         int count = 0;
 
         if (input != null && !input.trim().isEmpty()) {
@@ -48,7 +48,7 @@ public class Calculations {
         return diff;
     }
 
-    public int multiply(String input) {
+    int multiply(String input) {
         int answer = 1;
 
         if (input != null && !input.trim().isEmpty())
@@ -69,7 +69,7 @@ public class Calculations {
         return answer;
     }
 
-    public int divide(String input) {
+    int divide(String input) {
         int answer;
         int count = 0;
 
@@ -83,7 +83,6 @@ public class Calculations {
                 count = i;
             }
             if (count == 0){
-                answer = intArray[0];
                 throw new RuntimeException("Vienas skaicius, negalima dalinti");
             }else{
                 if (intArray[1] == 0)
