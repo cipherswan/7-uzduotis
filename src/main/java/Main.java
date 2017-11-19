@@ -43,6 +43,7 @@ public class Main {
 
         System.out.println("Skaiciavimai");
         System.out.println("----------");
+
         System.out.println("1.Sudetis");
         System.out.println("2.Atimtis");
         System.out.println("3.Daugyba");
